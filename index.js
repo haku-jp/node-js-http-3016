@@ -67,15 +67,15 @@ const server = http
     }
   })
   .on('error', e => {
-    console.error(`[${new Date()}] Server Error`, e);
+    console.error(`Server Error`, e);
   })
   .on('clientError', e => {
-    console.error(`[${new Date()}] Client Error`, e);
+    console.error(`Client Error`, e);
   });
 
 // render を利用した場合、環境変数 PORT にポート番号が設定される
 // 設定されていなければ8000を使う
 const port = process.env.PORT || 8000;
 server.listen(port, () => {
-  console.info(`[${new Date()}] Listening on ${port}`);
+  console.info(`Listening on ${port}`);
 });
