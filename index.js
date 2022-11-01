@@ -72,7 +72,10 @@ const server = http
   .on('clientError', e => {
     console.error(`[${new Date()}] Client Error`, e);
   });
-const port = 8000;
+
+// render を利用した場合、環境変数 PORT にポート番号が設定される
+// 設定されていなければ8000を使う
+const port = process.env.PORT || 8000;
 server.listen(port, () => {
   console.info(`[${new Date()}] Listening on ${port}`);
 });
